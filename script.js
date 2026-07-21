@@ -575,6 +575,42 @@ function initAccordionB() {
 
 
 
+//  no down load image -------------start-------------------
+
+
+// Right Click Disable
+document.addEventListener("contextmenu", function(e){
+    if(e.target.tagName === "IMG"){
+        e.preventDefault();
+    }
+});
+
+// Drag Disable
+document.querySelectorAll("img").forEach(img=>{
+    img.setAttribute("draggable","false");
+});
+
+// Keyboard Shortcuts Disable
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "F12"){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey && ["u","s","c","a","p"].includes(e.key.toLowerCase())){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey && e.shiftKey &&
+       ["i","j","c"].includes(e.key.toLowerCase())){
+        e.preventDefault();
+    }
+
+});
+
+
+
+//  no down load image ---------close-----------------------
 
 
 
