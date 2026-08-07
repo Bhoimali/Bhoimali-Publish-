@@ -49,11 +49,7 @@
 
 
     <style>
-        body {
-            /* background: #f3f6fb; */
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            /* line-height: 1.9; */
-        }
+      
 
         .hero {
             background: linear-gradient(90deg, #0d47a1, #1976d2);
@@ -68,12 +64,22 @@
         }
 
         .card {
+            /* width: 100%; */
             border: none;
             padding: 20px;
             border-radius: 20px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, .12);
             margin-bottom: 25px;
         }
+
+@media (min-width: 769px) {
+    .card {
+        width: 85%;
+        max-width: 1100px;
+        margin: 0 auto 25px auto;
+    }
+}
+
 
         h2 {
             color: #0d47a1;
@@ -103,8 +109,6 @@
         }
 
 
-
-
         .card-body p,
 article p{
     text-align:justify;
@@ -112,6 +116,15 @@ article p{
     line-height:1.9;
     font-size:17px;
 }
+
+
+.hisbox{
+
+
+    width: 100%;
+}
+
+
 
     </style>
 
@@ -148,7 +161,9 @@ article p{
             Bhoimali • Bhoi Mali Samaj • इतिहास • संस्कृति • परंपरा
         </p>
     </section>
-    <div class="container mt-7">
+    <!-- <div class="hisbox mt-7">  -->
+        
+            
         <div class="card">
             <div class="card-body">
 
@@ -2182,7 +2197,7 @@ SECTION 4 : श्रीकृष्ण, वृष्णि वंश एवं 
     </footer>
 
 
-    </div>
+    <!-- </div> -->
 
 
 
