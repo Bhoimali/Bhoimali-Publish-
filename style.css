@@ -919,5 +919,32 @@ img{
 
 /* History  --------------------START ---------------*/
 
+/* History  --------------------START ---------------*/
+
+
+.history-badge{
+position:relative;
+top:10px;
+left:50%;
+transform:translateX(-50%);
+width:120px;
+
+background:linear-gradient(90deg,#198754,#157347);
+color:#fff;
+
+padding:6px 16px;
+border-radius:30px;
+
+font-weight:600;
+font-size:14px;
+
+box-shadow:0 5px 15px rgba(25,135,84,.35);
+z-index:10;
+
+}
+
+
+
+/* History  --------------------CLOSE ---------------*/
 
 /* History  --------------------CLOSE ---------------*/
