@@ -1,9 +1,7 @@
 body {
-  body{
-    font-family: "Inter", "Noto Sans Devanagari", "Segoe UI", Roboto, Arial, sans-serif;
-}
+  font-family: "Inter", "Noto Sans Devanagari", "Segoe UI", Roboto, Arial, sans-serif;
   margin: 0;
-  background: url("https://res.cloudinary.com/uvnoet8d/image/upload/f_auto,q_auto/v1783913918/02Background.jpg") no-repeat center center fixed;
+  background: url("https://res.cloudinary.com/uvnoet8d/image/upload/f_auto,q_auto/v1786122181/WebBackground.jpg") no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
