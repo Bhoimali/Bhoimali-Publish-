@@ -198,7 +198,7 @@ async function loadAllPages() {
     await loadPage("downloadpdf", "downloadpdf.html");
 
      await loadPage("news", "news.html");
-     await loadPage("bhoimali-etihas", "bhoimali-etihas.html");
+     await loadPage("bhoimali-itihas", "bhoimali-itihas.html");
     
 }
 
