@@ -1,16 +1,3 @@
- <!-- {
-"redirects": [
-    {
-"source": "/home.html/",
-"destination": "/",
-"permanent": true
-    }
-  ]
-} -->
-
-
-
-
 {
   "redirects": [
     {
