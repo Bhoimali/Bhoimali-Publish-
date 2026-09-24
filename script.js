@@ -175,10 +175,56 @@ window.addEventListener("load", () => {
 
 
 
+// async function loadPage(id, file) {
+//     const html = await fetch(file).then(r => r.text());
+//     document.getElementById(id).innerHTML = html;
+// }
+
 async function loadPage(id, file) {
-    const html = await fetch(file).then(r => r.text());
-    document.getElementById(id).innerHTML = html;
+
+    const container = document.getElementById(id);
+
+    if (!container) return;
+
+    // PID Card के लिए Loader
+    if (id === "PIDCard") {
+
+        container.innerHTML = `
+            <div class="pid-loader">
+                <div class="spinner-border text-primary" role="status"></div>
+                <div class="mt-2">PID Card लोड हो रहा है...</div>
+            </div>
+        `;
+    }
+
+    try {
+
+        const response = await fetch(file);
+
+        if (!response.ok) {
+            throw new Error("File Load Error: " + response.status);
+        }
+
+        const html = await response.text();
+
+        container.innerHTML = html;
+
+    } catch (error) {
+
+        console.error("Page Load Error:", error);
+
+        container.innerHTML = `
+            <div class="alert alert-danger m-3">
+                PID Card लोड नहीं हो पाया।
+            </div>
+        `;
+    }
 }
+
+
+
+
+
 async function loadAllPages() {
     await loadPage("home", "home.html");
     initCarousel();
