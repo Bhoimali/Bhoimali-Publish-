@@ -225,30 +225,102 @@ async function loadPage(id, file) {
 
 
 
+// async function loadAllPages() {
+//     await loadPage("home", "home.html");
+//     initCarousel();
+//     initAdsSlider();
+//     initTeamSlider();
+//     await loadPage("samajbook", "samajbook.html");
+//     initAccordion();
+//     await loadPage("darpan", "darpan.html");
+//     await loadPage("sangam", "sangam.html");
+//     await loadPage("PhotoGallery", "PhotoGallery.html");
+//     await loadPage("student", "student.html");
+//     await loadPage("PIDCard", "PIDCard.html");
+//     await loadPage("SIDCard", "SIDCard.html");
+//     await loadPage("account", "account.html");
+//     await loadPage("editaccount", "editaccount.html");
+//     await loadPage("sevasamiti", "sevasamiti.html");
+//     await loadPage("downloadpdf", "downloadpdf.html");
+
+//      await loadPage("news", "news.html");
+//      await loadPage("bhoimali-itihas", "bhoimali-itihas.html");
+    
+// }
+
+
+
+
+
+// loadAllPages();
+
+
+
+
 async function loadAllPages() {
+
     await loadPage("home", "home.html");
+
     initCarousel();
     initAdsSlider();
     initTeamSlider();
+
+
     await loadPage("samajbook", "samajbook.html");
+
     initAccordion();
+
+
     await loadPage("darpan", "darpan.html");
+
+
     await loadPage("sangam", "sangam.html");
+
+
     await loadPage("PhotoGallery", "PhotoGallery.html");
+
+
     await loadPage("student", "student.html");
+
+
+    // PID CARD
     await loadPage("PIDCard", "PIDCard.html");
+
+
     await loadPage("SIDCard", "SIDCard.html");
+
+
     await loadPage("account", "account.html");
+
+
     await loadPage("editaccount", "editaccount.html");
+
+
     await loadPage("sevasamiti", "sevasamiti.html");
+
+
     await loadPage("downloadpdf", "downloadpdf.html");
 
-     await loadPage("news", "news.html");
-     await loadPage("bhoimali-itihas", "bhoimali-itihas.html");
-    
+
+    await loadPage("news", "news.html");
+
+
+    await loadPage(
+        "bhoimali-itihas",
+        "bhoimali-itihas.html"
+    );
+
 }
 
-// loadAllPages();
+
+
+
+
+
+
+
+
+
 
 
 
