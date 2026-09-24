@@ -8,42 +8,42 @@
 </iframe>  -->
 
 
-<!-- Loader -->
+
 <div id="PIDLoader" class="pid-loader">
-  <div class="spinner-border text-primary" role="status"></div>
-  <div>PID Card लोड हो रहा है...</div>
+    <div class="spinner-border text-primary"></div>
+    <div>लोड हो रहा है...</div>
 </div>
 
-<!-- Iframe -->
 <iframe
-  id="PIDCardFrame"
-  width="100%"
-  height="700"
-  frameborder="0"
-  style="display:none;">
+    id="PIDCardFrame"
+    width="100%"
+    height="700"
+    frameborder="0">
 </iframe>
 
 <style>
 .pid-loader {
-  height: 700px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    z-index: 10;
+}
+
+#PIDCardFrame {
+    position: relative;
+    z-index: 1;
 }
 </style>
 
 <script>
-const PIDCardFrame = document.getElementById("PIDCardFrame");
-const PIDLoader = document.getElementById("PIDLoader");
+const pidFrame = document.getElementById("PIDCardFrame");
+const pidLoader = document.getElementById("PIDLoader");
 
-// आपकी file
-PIDCardFrame.src = "PIDCard.html";
-
-// File load होने के बाद loader हटेगा
-PIDCardFrame.onload = function () {
-  PIDLoader.style.display = "none";
-  PIDCardFrame.style.display = "block";
-};
+pidFrame.addEventListener("load", function () {
+    pidLoader.style.display = "none";
+});
 </script>
