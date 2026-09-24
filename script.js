@@ -175,14 +175,12 @@ window.addEventListener("load", () => {
 
 
 
+
+
 async function loadPage(id, file) {
     const html = await fetch(file).then(r => r.text());
     document.getElementById(id).innerHTML = html;
 }
-
-
-
-
 async function loadAllPages() {
     await loadPage("home", "home.html");
     initCarousel();
@@ -200,17 +198,11 @@ async function loadAllPages() {
     await loadPage("editaccount", "editaccount.html");
     await loadPage("sevasamiti", "sevasamiti.html");
     await loadPage("downloadpdf", "downloadpdf.html");
-
-     await loadPage("news", "news.html");
-     await loadPage("bhoimali-itihas", "bhoimali-itihas.html");
+    await loadPage("news", "news.html");
     
 }
 
 // loadAllPages();
-
-
-
-}
 
 
 
