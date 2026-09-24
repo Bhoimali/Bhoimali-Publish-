@@ -179,50 +179,130 @@ window.addEventListener("load", () => {
 //     const html = await fetch(file).then(r => r.text());
 //     document.getElementById(id).innerHTML = html;
 // }
+// ==========================================
+// PAGE LOAD FUNCTION
+// ==========================================
 
 async function loadPage(id, file) {
 
     const container = document.getElementById(id);
 
-    if (!container) return;
+    if (!container) {
+        console.error("Container not found:", id);
+        return;
+    }
 
-    // PID Card के लिए Loader
+
+    // ======================================
+    // PID CARD LOADER
+    // ======================================
+
     if (id === "PIDCard") {
 
         container.innerHTML = `
-            <div class="pid-loader">
-                <div class="spinner-border text-primary" role="status"></div>
-                <div class="mt-2">PID Card लोड हो रहा है...</div>
+
+            <div class="pid-card-loader">
+
+                <div class="pid-spinner"></div>
+
+                <div class="pid-loader-text">
+                    PID Card लोड हो रहा है...
+                </div>
+
             </div>
+
         `;
+
     }
+
 
     try {
 
         const response = await fetch(file);
 
+
+        // File error check
+
         if (!response.ok) {
-            throw new Error("File Load Error: " + response.status);
+
+            throw new Error(
+                "File load failed: " + response.status
+            );
+
         }
+
+
+        // HTML प्राप्त करें
 
         const html = await response.text();
 
+
+        // HTML डालें
+
         container.innerHTML = html;
+
+
+        console.log(
+            "Page Loaded Successfully:",
+            file
+        );
+
 
     } catch (error) {
 
-        console.error("Page Load Error:", error);
+        console.error(
+            "Page Load Error:",
+            file,
+            error
+        );
+
+
+        // Error message
 
         container.innerHTML = `
-            <div class="alert alert-danger m-3">
-                PID Card लोड नहीं हो पाया।
+
+            <div style="
+                width:100%;
+                min-height:400px;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                text-align:center;
+                padding:30px;
+            ">
+
+                <div style="
+                    font-size:45px;
+                    margin-bottom:15px;
+                ">
+                    ⚠️
+                </div>
+
+                <h5>
+                    PID Card लोड नहीं हो पाया
+                </h5>
+
+                <p style="color:#666;">
+                    कृपया कुछ समय बाद पुनः प्रयास करें।
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="loadPage('PIDCard','PIDCard.html')">
+
+                    पुनः प्रयास करें
+
+                </button>
+
             </div>
+
         `;
+
     }
+
 }
-
-
-
 
 
 // async function loadAllPages() {
