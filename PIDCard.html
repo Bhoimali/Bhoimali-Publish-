@@ -1,28 +1,27 @@
 	
 
 
-    <iframe id="PIDCardFrame"
+    <!-- <iframe id="PIDCardFrame"
         width="100%"
         height="700"
         frameborder="0">
-</iframe> 
+</iframe>  -->
 
 
-
-
-
+<!-- Loader -->
 <div id="PIDLoader" class="pid-loader">
-  <div class="spinner-border text-primary"></div>
+  <div class="spinner-border text-primary" role="status"></div>
   <div>PID Card लोड हो रहा है...</div>
 </div>
 
-<!-- <iframe
+<!-- Iframe -->
+<iframe
   id="PIDCardFrame"
   width="100%"
   height="700"
   frameborder="0"
   style="display:none;">
-</iframe> -->
+</iframe>
 
 <style>
 .pid-loader {
@@ -31,17 +30,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  font-size: 16px;
+  gap: 10px;
 }
 </style>
 
 <script>
-const frame = document.getElementById("PIDCardFrame");
-const loader = document.getElementById("PIDLoader");
+const PIDCardFrame = document.getElementById("PIDCardFrame");
+const PIDLoader = document.getElementById("PIDLoader");
 
-frame.onload = function () {
-  loader.style.display = "none";
-  frame.style.display = "block";
+// आपकी file
+PIDCardFrame.src = "PIDCard.html";
+
+// File load होने के बाद loader हटेगा
+PIDCardFrame.onload = function () {
+  PIDLoader.style.display = "none";
+  PIDCardFrame.style.display = "block";
 };
 </script>
