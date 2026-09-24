@@ -199,6 +199,7 @@ async function loadAllPages() {
     await loadPage("sevasamiti", "sevasamiti.html");
     await loadPage("downloadpdf", "downloadpdf.html");
     await loadPage("news", "news.html");
+    await loadPage("bhoimali-itihas", "bhoimali-itihas.html");
     
 }
 
