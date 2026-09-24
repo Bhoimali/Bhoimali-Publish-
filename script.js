@@ -175,45 +175,246 @@ window.addEventListener("load", () => {
 
 
 
+// async function loadPage(id, file) {
+//     const html = await fetch(file).then(r => r.text());
+//     document.getElementById(id).innerHTML = html;
+// }
+
+
+
+
+// async function loadAllPages() {
+//     await loadPage("home", "home.html");
+//     initCarousel();
+//     initAdsSlider();
+//     initTeamSlider();
+//     await loadPage("samajbook", "samajbook.html");
+//     initAccordion();
+//     await loadPage("darpan", "darpan.html");
+//     await loadPage("sangam", "sangam.html");
+//     await loadPage("PhotoGallery", "PhotoGallery.html");
+//     await loadPage("student", "student.html");
+//     await loadPage("PIDCard", "PIDCard.html");
+//     await loadPage("SIDCard", "SIDCard.html");
+//     await loadPage("account", "account.html");
+//     await loadPage("editaccount", "editaccount.html");
+//     await loadPage("sevasamiti", "sevasamiti.html");
+//     await loadPage("downloadpdf", "downloadpdf.html");
+
+//      await loadPage("news", "news.html");
+//      await loadPage("bhoimali-itihas", "bhoimali-itihas.html");
+    
+// }
+
+// // loadAllPages();
+
+// }
+
+
+// ==========================================
+// PAGE LOAD FUNCTION
+// ==========================================
+
 async function loadPage(id, file) {
-    const html = await fetch(file).then(r => r.text());
-    document.getElementById(id).innerHTML = html;
+
+    const container = document.getElementById(id);
+
+    if (!container) {
+        console.error("Container not found:", id);
+        return;
+    }
+
+
+    // ======================================
+    // PID CARD LOADER
+    // ======================================
+
+    if (id === "PIDCard") {
+
+        container.innerHTML = `
+
+            <div class="pid-card-loader">
+
+                <div class="pid-spinner"></div>
+
+                <div class="pid-loader-text">
+                    PID Card लोड हो रहा है...
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    try {
+
+        const response = await fetch(file);
+
+
+        // File error check
+
+        if (!response.ok) {
+
+            throw new Error(
+                "File load failed: " + response.status
+            );
+
+        }
+
+
+        // HTML प्राप्त करें
+
+        const html = await response.text();
+
+
+        // HTML डालें
+
+        container.innerHTML = html;
+
+
+        console.log(
+            "Page Loaded Successfully:",
+            file
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Page Load Error:",
+            file,
+            error
+        );
+
+
+        // Error message
+
+        container.innerHTML = `
+
+            <div style="
+                width:100%;
+                min-height:400px;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                text-align:center;
+                padding:30px;
+            ">
+
+                <div style="
+                    font-size:45px;
+                    margin-bottom:15px;
+                ">
+                    ⚠️
+                </div>
+
+                <h5>
+                    PID Card लोड नहीं हो पाया
+                </h5>
+
+                <p style="color:#666;">
+                    कृपया कुछ समय बाद पुनः प्रयास करें।
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="loadPage('PIDCard','PIDCard.html')">
+
+                    पुनः प्रयास करें
+
+                </button>
+
+            </div>
+
+        `;
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 async function loadAllPages() {
+
     await loadPage("home", "home.html");
+
     initCarousel();
     initAdsSlider();
     initTeamSlider();
+
+
     await loadPage("samajbook", "samajbook.html");
+
     initAccordion();
+
+
     await loadPage("darpan", "darpan.html");
+
+
     await loadPage("sangam", "sangam.html");
+
+
     await loadPage("PhotoGallery", "PhotoGallery.html");
+
+
     await loadPage("student", "student.html");
+
+
+    // PID CARD
     await loadPage("PIDCard", "PIDCard.html");
+
+
     await loadPage("SIDCard", "SIDCard.html");
+
+
     await loadPage("account", "account.html");
+
+
     await loadPage("editaccount", "editaccount.html");
+
+
     await loadPage("sevasamiti", "sevasamiti.html");
+
+
     await loadPage("downloadpdf", "downloadpdf.html");
 
-     await loadPage("news", "news.html");
-     await loadPage("bhoimali-itihas", "bhoimali-itihas.html");
-    
-}
+
+    await loadPage("news", "news.html");
 
 
-
-
-
-// loadAllPages();
-
+    await loadPage(
+        "bhoimali-itihas",
+        "bhoimali-itihas.html"
+    );
 
 }
+
+
+
+
+
+
+
+
+
 
 
 
