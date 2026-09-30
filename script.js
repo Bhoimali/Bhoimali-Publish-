@@ -310,22 +310,72 @@ function initAdsSlider() {
 
 
 
+// function readMoreFun(className, buttonId) {
+
+//     const elements = document.getElementsByClassName(className);
+//     const button = document.getElementById(buttonId);
+
+//     for (let i = 0; i < elements.length; i++) {
+//         elements[i].classList.toggle("hidden-content");
+//     }
+
+//     button.classList.toggle("hidden-readmore");
+
+//     if (!button.classList.contains("hidden-readmore")) {
+//         button.scrollIntoView({
+//             behavior: "smooth",
+//             block: "center"
+//         });
+//     }
+// }
+
+
+
 function readMoreFun(className, buttonId) {
 
     const elements = document.getElementsByClassName(className);
     const button = document.getElementById(buttonId);
 
+    // Read More / Read Less content toggle
     for (let i = 0; i < elements.length; i++) {
         elements[i].classList.toggle("hidden-content");
     }
 
+    // Button toggle
     button.classList.toggle("hidden-readmore");
 
+    // जब Read Less किया जाए
     if (!button.classList.contains("hidden-readmore")) {
-        button.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
+
+        const heading = document.getElementById("aboutWebsiteHeading");
+
+        if (heading) {
+
+            setTimeout(function () {
+
+                // Fixed navbar की actual height
+                const navbar = document.querySelector(".navbar");
+
+                const navbarHeight = navbar
+                    ? navbar.getBoundingClientRect().height
+                    : 0;
+
+                // Heading की exact position
+                const headingPosition =
+                    heading.getBoundingClientRect().top +
+                    window.pageYOffset;
+
+                // Navbar के नीचे थोड़ी जगह
+                const finalPosition =
+                    headingPosition - navbarHeight - 15;
+
+                window.scrollTo({
+                    top: finalPosition,
+                    behavior: "smooth"
+                });
+
+            }, 150);
+        }
     }
 }
 
