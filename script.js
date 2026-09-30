@@ -592,9 +592,8 @@ function initAccordionB() {
 
 
 
- function showPage(page) {
 
-
+function showPage(page) {
 
     const allLinks = document.querySelectorAll("[data-page]");
     const sections = document.querySelectorAll(".content");
@@ -695,8 +694,6 @@ document.querySelectorAll("#navActionBtnMobile, #navActionBtnDesktop")
         top: 0,
         behavior: "smooth"
     });
-
-}
 
     const offcanvasEl = document.querySelector(".offcanvas.show");
 
