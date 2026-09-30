@@ -605,7 +605,9 @@ function initAccordionB() {
 
 
 
-function showPage(page) {
+// function showPage(page) {
+
+function showPage(page, shouldScroll = true) {
 
     const allLinks = document.querySelectorAll("[data-page]");
     const sections = document.querySelectorAll(".content");
