@@ -592,9 +592,8 @@ function initAccordionB() {
 
 
 
+ function showPage(page) {
 
-// function showPage(page) {
-function showPage(page, shouldScroll = true) {
 
 
     const allLinks = document.querySelectorAll("[data-page]");
@@ -692,16 +691,11 @@ document.querySelectorAll("#navActionBtnMobile, #navActionBtnDesktop")
 
     }
 
-    // window.scrollTo({
-    //     top: 0,
-    //     behavior: "smooth"
-    // });
-
-    if (shouldScroll) {
     window.scrollTo({
         top: 0,
-        behavior: "auto"
+        behavior: "smooth"
     });
+
 }
 
     const offcanvasEl = document.querySelector(".offcanvas.show");
