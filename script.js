@@ -310,38 +310,26 @@ function initAdsSlider() {
 
 
 
-// function readMoreFun(className, buttonId) {
-
-//     const elements = document.getElementsByClassName(className);
-//     const button = document.getElementById(buttonId);
-
-//     for (let i = 0; i < elements.length; i++) {
-//         elements[i].classList.toggle("hidden-content");
-//     }
-
-//     button.classList.toggle("hidden-readmore");
-
-//     if (!button.classList.contains("hidden-readmore")) {
-//         button.scrollIntoView({
-//             behavior: "smooth",
-//             block: "center"
-//         });
-//     }
-// }
-
 function readMoreFun(className, buttonId) {
 
     const elements = document.getElementsByClassName(className);
     const button = document.getElementById(buttonId);
-
-    if (!button) return;
 
     for (let i = 0; i < elements.length; i++) {
         elements[i].classList.toggle("hidden-content");
     }
 
     button.classList.toggle("hidden-readmore");
+
+    if (!button.classList.contains("hidden-readmore")) {
+        button.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
 }
+
+
 
 
 
@@ -605,9 +593,9 @@ function initAccordionB() {
 
 
 
-// function showPage(page) {
+function showPage(page) {
 
-function showPage(page, shouldScroll = true) {
+
 
     const allLinks = document.querySelectorAll("[data-page]");
     const sections = document.querySelectorAll(".content");
