@@ -331,53 +331,53 @@ function initAdsSlider() {
 
 
 
-// function readMoreFun(className, buttonId) {
+function readMoreFun(className, buttonId) {
 
-//     const elements = document.getElementsByClassName(className);
-//     const button = document.getElementById(buttonId);
+    const elements = document.getElementsByClassName(className);
+    const button = document.getElementById(buttonId);
 
-//     // Read More / Read Less content toggle
-//     for (let i = 0; i < elements.length; i++) {
-//         elements[i].classList.toggle("hidden-content");
-//     }
+    // Read More / Read Less content toggle
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.toggle("hidden-content");
+    }
 
-//     // Button toggle
-//     button.classList.toggle("hidden-readmore");
+    // Button toggle
+    button.classList.toggle("hidden-readmore");
 
-//     // जब Read Less किया जाए
-//     if (!button.classList.contains("hidden-readmore")) {
+    // जब Read Less किया जाए
+    if (!button.classList.contains("hidden-readmore")) {
 
-//         const heading = document.getElementById("aboutWebsiteHeading");
+        const heading = document.getElementById("aboutWebsiteHeading");
 
-//         if (heading) {
+        if (heading) {
 
-//             setTimeout(function () {
+            setTimeout(function () {
 
-//                 // Fixed navbar की actual height
-//                 const navbar = document.querySelector(".navbar");
+                // Fixed navbar की actual height
+                const navbar = document.querySelector(".navbar");
 
-//                 const navbarHeight = navbar
-//                     ? navbar.getBoundingClientRect().height
-//                     : 0;
+                const navbarHeight = navbar
+                    ? navbar.getBoundingClientRect().height
+                    : 0;
 
-//                 // Heading की exact position
-//                 const headingPosition =
-//                     heading.getBoundingClientRect().top +
-//                     window.pageYOffset;
+                // Heading की exact position
+                const headingPosition =
+                    heading.getBoundingClientRect().top +
+                    window.pageYOffset;
 
-//                 // Navbar के नीचे थोड़ी जगह
-//                 const finalPosition =
-//                     headingPosition - navbarHeight - 15;
+                // Navbar के नीचे थोड़ी जगह
+                const finalPosition =
+                    headingPosition - navbarHeight - 15;
 
-//                 window.scrollTo({
-//                     top: finalPosition,
-//                     behavior: "smooth"
-//                 });
+                window.scrollTo({
+                    top: finalPosition,
+                    behavior: "smooth"
+                });
 
-//             }, 150);
-//         }
-//     }
-// }
+            }, 150);
+        }
+    }
+}
 
 
 
