@@ -1,1 +1,11 @@
 
+{
+  "versionCode": 2,
+  "versionName": "1.2",
+  "distributionMode": "apk",
+  "apkUrl": "https://bhoimali.vercel.app/downloads/Bhoimali-1.2.apk",
+  "playStoreUrl": "https://play.google.com/store/apps/details?id=com.example.bhoimali",
+  "forceUpdate": false,
+  "message": "ऐप का नया संस्करण उपलब्ध है।"
+}
+
