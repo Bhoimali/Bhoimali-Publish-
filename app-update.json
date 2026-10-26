@@ -1,8 +1,8 @@
 {
-  "versionCode": 23,
-  "versionName": "1.23",
+  "versionCode": 2,
+  "versionName": "1.2",
   "distributionMode": "apk",
-  "apkUrl": "https://bhoimali.vercel.app/Bhoimali03-V1.23-debug.apk",
+  "apkUrl": "https://bhoimali.vercel.app/Bhoimali03-V1.2-debug.apk",
   "playStoreUrl": "https://play.google.com/store/apps/details?id=com.example.bhoimali",
   "forceUpdate": false,
   "message": "Bhoi Mali App का नया संस्करण उपलब्ध है।"
