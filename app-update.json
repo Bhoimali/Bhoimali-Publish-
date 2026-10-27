@@ -1,9 +1,9 @@
 
 {
-  "versionCode": 9,
-  "versionName": "1.9",
+  "versionCode": 10,
+  "versionName": "1.10",
   "distributionMode": "apk",
-  "apkUrl": "https://bhoimali.vercel.app/Bhoimali04-2-V1.9-debug.apk",
+  "apkUrl": "https://bhoimali.vercel.app/Bhoimali04-2-V1.10-release.apk",
   "playStoreUrl": "https://play.google.com/store/apps/details?id=com.example.bhoimali",
   "forceUpdate": false,
   "message": "Bhoi Mali App का नया संस्करण उपलब्ध है।"
